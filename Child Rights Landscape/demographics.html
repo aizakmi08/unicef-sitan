@@ -24,6 +24,9 @@
 
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
+
+  <script src="https://microsoft.github.io/PowerBI-JavaScript/dist/powerbi.min.js"></script>
+
 </head>
 
 <body>
@@ -113,7 +116,53 @@
   </section><!-- End Hero Section -->
 
   <main id="main">
-
+    <div id="powerBiContainer">
+      <!-- Replace this placeholder content with the Power BI embed code -->
+      <iframe src="https://app.powerbi.com/reportEmbed?reportId=<report_id>&groupId=<group_id>"
+        width="800" height="600" frameborder="0" allowFullScreen="true"></iframe>
+    </div>
+    <section>
+      <div class="container">
+        <div class="section collapsed">
+          <h2 class="title">Scale</h1>
+            <div hidden="until-found" class="details">
+              <div class="container" style="margin-left: auto;">
+                <div class="row justify-content-md-center">
+                  <div class="col">
+                    <h4 style="margin-bottom: 10px;">Children affected</h4>
+                  </div>
+                  <div class="col-md-auto">
+                    <h6>Total population: 6,636,803 in 2021.<br>
+                      38% (2,511,922) are under the age of 18<br>
+                      48.4% (3,212,521) are under the age of 25<br>
+                      Total fertility rate is 3.9 births per woman (MICS 2018).</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        
+        <div class="section collapsed">
+          <h2 class="title">Equity</h1>
+            <div hidden="until-found" class="details">
+              <div class="container" style="margin-left: auto;">
+                <div class="row justify-content-md-center">
+                  <div class="col">
+                    <h4 style="margin-bottom: 10px;">Children affected</h4>
+                  </div>
+                  <div class="col-md-auto">
+                    <h6>Total population: 6,636,803 in 2021.<br>
+                      38% (2,511,922) are under the age of 18<br>
+                      48.4% (3,212,521) are under the age of 25<br>
+                      Total fertility rate is 3.9 births per woman (MICS 2018).</h6>
+                  </div>
+                </div>
+              </div>              
+            </div>
+        </div>
+      </div>
+    </section>
+    
     
   </main><!-- End #main -->
 
@@ -196,6 +245,19 @@
 
   <!-- Template Main JS File -->
   <script src="../assets/js/main.js"></script>
+  <script>
+    var embedConfig = {
+        type: 'dashboard',
+        id: 'YourDashboardId',
+        embedUrl: 'YourEmbedUrl',
+        accessToken: 'YourAccessToken',
+        tokenType: 'AAD'
+    };
+
+    var embedContainer = document.getElementById('dashboardContainer');
+    var dashboard = powerbi.embed(embedContainer, embedConfig);
+</script>
+
 
 </body>
 

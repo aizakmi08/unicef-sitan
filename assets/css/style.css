@@ -1479,3 +1479,17 @@ section {
 #footer .credits a:hover {
   color: #f1f7ff;
 }
+
+.title {
+  cursor: pointer;
+}
+.title::before {
+  content: "⬇️ ";
+}
+.collapsed > .title::before {
+  content: "➡️ ";
+}
+
+.details {
+  max-width: 40em;
+}
